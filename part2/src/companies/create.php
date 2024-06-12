@@ -29,6 +29,8 @@ EOT;
         // $sqlへの登録に失敗(false)なら、「データの追加に失敗しました」と、その理由
         echo 'Error: データの追加に失敗しました' . PHP_EOL;
         echo 'Debugging Error' . mysqli_error($link) . PHP_EOL;
+        error_log('Error: fail to create company');
+	    error_log('Debugging Error:　' . mysqli_error($link));
     }
 }
 
