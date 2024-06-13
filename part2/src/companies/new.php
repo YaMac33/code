@@ -1,4 +1,10 @@
-<?
+<?php
+
+$company = [
+    'name' => '',
+    'estublishment_date' => '',
+    'founder' => ''
+];
 
 $errors = [];
 

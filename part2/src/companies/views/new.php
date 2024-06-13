@@ -20,15 +20,15 @@
 
         <div>
             <label for="name">会社名</label>
-            <input type="text" id="name" name="name">
+            <input type="text" id="name" name="name" value="<?php echo $company['name'] ?>">
         </div>
         <div>
             <label for="establishment_date">設立日</label>
-            <input type="date" id="establishment_date" name="establishment_date">
+            <input type="date" id="establishment_date" name="establishment_date" value="<?php echo $company['establishment_date'] ?>">
         </div>
         <div>
             <label for="founder">代表者</label>
-            <input type="text" id="founder" name="founder">
+            <input type="text" id="founder" name="founder" value="<?php echo $company['founder'] ?>">
         </div>
         <div>
             <button type="submit">登録する</button>
