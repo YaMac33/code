@@ -51,7 +51,7 @@ function validate($company)
     $dates = explode('-', $company['establishment_date']);
     // 「日付じゃなかったらエラー」を出力するために、まず
     // どんな形式で出力されているか確認する
-    var_dump($company['establishment_date']);
+    // var_dump($company['establishment_date']);
     if (!strlen($company['establishment_date'])) {
         $errors['establishment_date'] = '設立日を入力してください';
     // 月、日、年
@@ -92,19 +92,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // バリデーションエラーがなければ
     // もしエラーをcountして1もなければ
-    if(!count(errors)) {
-    $link = dbConnect();
-    createCompany($link, $company);
-    mysqli_close($link);
-    header("Location: index.php");
+    if(!count($errors)) {
+        $link = dbConnect();
+        createCompany($link, $company);
+        mysqli_close($link);
+        header("Location: index.php");
+
+    // もしエラーがあればフォーム上でHTML内の情報を表示させる必要がある
+    // 荒業だが、new.phpの2行目以降をひとまずすべて貼り付ける
+    }
 
     // もしエラーがあればフォーム上でHTML内の情報を表示させる必要がある
     // 荒業だが、new.phpの2行目以降をひとまずすべて貼り付ける
 }
 
-    // もしエラーがあればフォーム上でHTML内の情報を表示させる必要がある
-    // 荒業だが、new.phpの2行目以降をひとまずすべて貼り付ける
-}
 ?>
 <!DOCTYPE html>
 <html lang="ja">
