@@ -2,7 +2,7 @@
 $headings-line-height: 1.5;
 $line-height-base: 1.65;
 
-// Colors
+//Colors
 $gray-dark: #546E7A;
 
 // Font-family
@@ -53,8 +53,13 @@ $font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Y
   }
 }
 
-// Import bootstrap
-@import '/var/www/html/vendor/twbs/bootstrap/scss/bootstrap';body {
-  letter-spacing: 0.1em;
-  text-align: justify;
+
+@import '/var/www/html/vendor/twbs/bootstrap/scss/bootstrap.scss';
+
+body {
+    letter-spacing: 0.1em;
+    text-align: justify;
 }
+
+// 独自の設定をしたい場合はBootstrapを読み込んだあとの行に書くこと。
+// 今回で言うbody以下の構文のこと。

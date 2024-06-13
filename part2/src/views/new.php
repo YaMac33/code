@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="stylesheet" href="stylesheets/css/app.css">
     <title>読書ログ登録</title>
 </head>
 
