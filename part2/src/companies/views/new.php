@@ -10,15 +10,15 @@
 
     <div class="form-group">
         <label for="name">会社名</label>
-        <input type="text" id="name" name="name" class="form-control" value="<?php echo $company['name'] ?>">
+        <input type="text" id="name" name="name" class="form-control mb-4" value="<?php echo $company['name'] ?>">
     </div>
     <div class="form-group">
         <label for="establishment_date">設立日</label>
-        <input type="date" id="establishment_date" name="establishment_date" class="form-control" value="<?php echo $company['establishment_date'] ?>">
+        <input type="date" id="establishment_date" name="establishment_date" class="form-control mb-4" value="<?php echo $company['establishment_date'] ?>">
     </div>
     <div class="form-group">
         <label for="founder">代表者</label>
-        <input type="text" id="founder" name="founder" class="form-control" value="<?php echo $company['founder'] ?>">
+        <input type="text" id="founder" name="founder" class="form-control mb-4" value="<?php echo $company['founder'] ?>">
     </div>
     <div>
         <button type="submit" class="btn btn-primary">登録する</button>

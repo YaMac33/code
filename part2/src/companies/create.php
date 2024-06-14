@@ -106,4 +106,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // 荒業だが、new.phpの2行目以降をひとまずすべて貼り付ける
 }
 
-include 'views/new.php';
+$content = __DIR__ . "/views/new.php";
+include __DIR__ . '/views/layout.php';

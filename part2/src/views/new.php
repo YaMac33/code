@@ -10,36 +10,36 @@
 
     <div class="form-group">
         <label for="title">書籍名</label>
-        <input type="text" name="title" id="title" class="form-control" value="<?php echo $review['title'] ?>">
+        <input type="text" name="title" id="title" class="form-control mb-4" value="<?php echo $review['title'] ?>">
     </div>
     <div class="form-group">
         <label for="author">著者名</label>
-        <input type="text" name="author" id="author" class="form-control" value="<?php echo $review['author'] ?>">
+        <input type="text" name="author" id="author" class="form-control mb-4" value="<?php echo $review['author'] ?>">
     </div>
     <div class="form-group">
         <label>読書状況</label>
         <div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="status" id="status1" value="未読" <?php echo ($review['status'] === '未読') ? 'checked' : ''; ?>>
+                <input class="form-check-input mb-4" type="radio" name="status" id="status1" value="未読" <?php echo ($review['status'] === '未読') ? 'checked' : ''; ?>>
                 <label class="form-check-label" for="status1">未読</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="status" id="status2" value="読書中" <?php echo ($review['status'] === '読書中') ? 'checked' : ''; ?>>
+                <input class="form-check-input mb-4" type="radio" name="status" id="status2" value="読書中" <?php echo ($review['status'] === '読書中') ? 'checked' : ''; ?>>
                 <label class="form-check-label" for="status2">読書中</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="status" id="status3" value="読了" <?php echo ($review['status'] === '読了') ? 'checked' : ''; ?>>
-                <label class="form-check-label" for="status3">読了</label>
+                <input class="form-check-input mb-4" type="radio" name="status" id="status3" value="読了" <?php echo ($review['status'] === '読了') ? 'checked' : ''; ?>>
+                <label class="form-check-label mb-4" for="status3">読了</label>
             </div>
         </div>
     </div>
     <div class="form-group">
         <label for="score">評価（5点満点の整数）</label>
-        <input type="number" name="score" id="score" class="form-control" value="<?php echo $review['score'] ?>">
+        <input type="number" name="score" id="score" class="form-control mb-4" value="<?php echo $review['score'] ?>">
     </div>
     <div class="form-group">
         <label for="summary">感想</label>
-        <textarea type="text" name="summary" id="summary" class="form-control" rows="10"><?php echo $review['summary'] ?></textarea>
+        <textarea type="text" name="summary" id="summary" class="form-control mb-4" rows="10"><?php echo $review['summary'] ?></textarea>
     </div>
     <button type="submit" class="btn btn-primary">登録する</button>
 </form>
