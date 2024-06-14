@@ -94,6 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-
-// ここを追記。以下のHTMLは削除
-include 'views/new.php';
+$title = '読書ログ登録';
+// ここを修正
+$content = __DIR__ . "/views/new.php";
+include __DIR__ . '/views/layout.php';

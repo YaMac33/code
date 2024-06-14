@@ -1,6 +1,5 @@
 <?php
 
-// ここを追記
 $review = [
     'title' => '',
     'author' => '',
@@ -8,7 +7,8 @@ $review = [
     'score' => '',
     'summary' => ''
 ];
-
 $errors = [];
 
-include 'views/new.php';
+$title = '読書ログ登録';
+$content = __DIR__ . "/views/new.php";
+include __DIR__ . '/views/layout.php';
