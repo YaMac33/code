@@ -7,7 +7,7 @@ function dropTable($link)
 	$dropTableSql = 'DROP TABLE IF EXISTS companies;';
 	$result = mysqli_query($link, $dropTableSql);
 	if ($result) {
-        echo 'テーブルを削除しました' . PHP_EOL . PHP_EOL;
+        echo 'テーブルを削除しました' . PHP_EOL;
     } else {
         echo 'Error: テーブルの削除に失敗しました' . PHP_EOL;
         echo 'Debugging Error: ' . mysqli_error($link) . PHP_EOL . PHP_EOL;
@@ -28,10 +28,10 @@ CREATE TABLE companies (
 EOT;
 	$result = mysqli_query($link, $createTableSql);
 	if ($result) {
-        echo 'テーブルを作成しました' . PHP_EOL . PHP_EOL;
+        echo 'テーブルを作成しました' . PHP_EOL;
     } else {
         echo 'Error: テーブルの作成に失敗しました' . PHP_EOL;
-        echo 'Debugging Error: ' . mysqli_error($link) . PHP_EOL . PHP_EOL;
+        echo 'Debugging Error: ' . mysqli_error($link) . PHP_EOL;
     }
 }
 

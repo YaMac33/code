@@ -24,8 +24,8 @@
                 <label class="form-check-label" for="status1">未読</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="status" id="status2" value="読んでる" <?php echo ($review['status'] === '読んでる') ? 'checked' : ''; ?>>
-                <label class="form-check-label" for="status2">読んでる</label>
+                <input class="form-check-input" type="radio" name="status" id="status2" value="読書中" <?php echo ($review['status'] === '読書中') ? 'checked' : ''; ?>>
+                <label class="form-check-label" for="status2">読書中</label>
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="status" id="status3" value="読了" <?php echo ($review['status'] === '読了') ? 'checked' : ''; ?>>
