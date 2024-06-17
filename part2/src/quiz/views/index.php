@@ -9,7 +9,7 @@
                         <?php echo escape($viewTime['channelName']); ?>
                     </h2>
                     <div>
-                        チャンネル：<?php echo escape($viewTime['channelNumber']); ?>&nbsp;|&nbsp;視聴時間：<?php echo escape($viewTime['viewingTime']); ?>
+                        チャンネル番号：<?php echo escape($viewTime['channelNumber']); ?>&nbsp;|&nbsp;視聴時間：<?php echo escape($viewTime['viewingTime']); ?>
                     </div>
                 </div>
             </section>
