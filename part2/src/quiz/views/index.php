@@ -9,9 +9,16 @@
                         <?php echo escape($viewTime['channelName']); ?>
                     </h2>
                     <div>
-                        チャンネル番号：<?php echo escape($viewTime['channelNumber']); ?>&nbsp;|&nbsp;視聴時間：<?php echo escape($viewTime['viewingTime']); ?>
+                        チャンネル番号：<?php echo escape($viewTime['channelNumber']); ?>&nbsp;|&nbsp;視聴時間：
+                        <?php
+                            // 視聴時間の計算
+                            $hours = floor($viewTime['viewingTime'] / 60); // 時間部分を計算
+                            $remainingMinutes = $viewTime['viewingTime'] % 60; // 残りの分数を計算
+                            $result = $hours . ":" . str_pad($remainingMinutes, 2, "0", STR_PAD_LEFT); // 時間と分数を適切な形式で結合
+                            // 結果の出力
+                            echo escape($result);
+                        ?>
                     </div>
-                </div>
             </section>
         <?php endforeach; ?>
     <?php else : ?>

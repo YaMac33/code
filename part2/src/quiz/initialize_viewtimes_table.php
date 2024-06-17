@@ -21,7 +21,7 @@ CREATE TABLE viewTimes (
 	id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	channelName VARCHAR(255),
 	channelNumber VARCHAR(255),
-	viewingTime time,
+	viewingTime int,
 	created_at TIMESTAMP NOT NULL DEFAULT
 	CURRENT_TIMESTAMP
 ) DEFAULT CHARACTER SET=utf8mb4;
