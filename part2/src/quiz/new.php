@@ -1,6 +1,6 @@
 <?php
 
-$company = [
+$viewTime = [
     'name' => '',
     'estublishment_date' => '',
     'founder' => ''

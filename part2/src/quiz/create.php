@@ -3,19 +3,19 @@
 require_once __DIR__ . '/lib/mysqli.php';
 
 // ４－２　関数の中身を書く
-// 引数を２つ($link, $company)指定して、それぞれを
+// 引数を２つ($link, $viewTime)指定して、それぞれを
 // 変数($sql)に代入する
-function createCompany($link, $company)
+function createCompany($link, $viewTime)
 {
     $sql = <<<EOT
-INSERT INTO companies (
+INSERT INTO viewTimes (
     name,
     establishment_date,
     founder
 ) VALUES (
-    "{$company['name']}",
-    "{$company['establishment_date']}",
-    "{$company['founder']}"
+    "{$viewTime['name']}",
+    "{$viewTime['establishment_date']}",
+    "{$viewTime['founder']}"
 )
 EOT;
 
@@ -34,25 +34,25 @@ EOT;
     }
 }
 
-function validate($company)
+function validate($viewTime)
 {
     // まず、エラー情報を配列で保存する
     $errors = [];
 
     // 会社名
-    if (!strlen($company['name'])) {
+    if (!strlen($viewTime['name'])) {
         $errors['name'] = '会社名を入力してください';
-    } elseif (strlen($company['name']) > 255) {
+    } elseif (strlen($viewTime['name']) > 255) {
         $errors['name'] = '会社名は255文字以内で入力してください';
     }
 
     // 設立日
     // 2020-10-8 → 2020 10 8 「explode」で一度分離させる
-    $dates = explode('-', $company['establishment_date']);
+    $dates = explode('-', $viewTime['establishment_date']);
     // 「日付じゃなかったらエラー」を出力するために、まず
     // どんな形式で出力されているか確認する
-    // var_dump($company['establishment_date']);
-    if (!strlen($company['establishment_date'])) {
+    // var_dump($viewTime['establishment_date']);
+    if (!strlen($viewTime['establishment_date'])) {
         $errors['establishment_date'] = '設立日を入力してください';
     // 月、日、年
     } elseif (count($dates) !== 3) {
@@ -62,9 +62,9 @@ function validate($company)
     }
 
     // 代表者
-    if (!strlen($company['founder'])) {
+    if (!strlen($viewTime['founder'])) {
         $errors['founder'] = '代表者名を入力してください';
-    } elseif (strlen($company['founder']) > 100) {
+    } elseif (strlen($viewTime['founder']) > 100) {
             $errors['founder'] = '代表者名は100文字以内で入力してください';
     }
 
@@ -78,23 +78,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // ２　POSTされた会社情報を変数(連想配列)に格納して、
     // (ここの['○○']は「new.php」でいう「label for」「id」「name」のどれに当たる？)→どれでもなかった
     // (var_export($_POST); で格納された値を確認するとよい)
-    $company = [
+    $viewTime = [
         'name' => $_POST['name'],
         'establishment_date' => $_POST['establishment_date'],
         'founder' => $_POST['founder']
     ];
-    // (var_export($company); で、処理後の状況を確認するのもよい)
+    // (var_export($viewTime); で、処理後の状況を確認するのもよい)
 
 
     // ６　バリデーションをする
     // companyで受け取った処理に対してエラーを返す
-    $errors = validate($company);
+    $errors = validate($viewTime);
 
     // バリデーションエラーがなければ
     // もしエラーをcountして1もなければ
     if(!count($errors)) {
         $link = dbConnect();
-        createCompany($link, $company);
+        createCompany($link, $viewTime);
         mysqli_close($link);
         header("Location: index.php");
 
