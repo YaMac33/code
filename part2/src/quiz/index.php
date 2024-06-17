@@ -10,7 +10,7 @@ function listviewTimes($link)
     // ループの外で$viewTimesを空配列として定義しておく
     $viewTimes = [];
     // sqlで取得したいテーブルとその中のデータを指定する
-    $sql = 'SELECT channelName, establishment_date, founder FROM viewTimes;';
+    $sql = 'SELECT channelName, channelNumber, founder FROM viewTimes;';
     $results = mysqli_query($link, $sql);
 
     while ($viewTime = mysqli_fetch_assoc($results)) {

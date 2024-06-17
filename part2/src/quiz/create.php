@@ -10,11 +10,11 @@ function createCompany($link, $viewTime)
     $sql = <<<EOT
 INSERT INTO viewTimes (
     channelName,
-    establishment_date,
+    channelNumber,
     founder
 ) VALUES (
     "{$viewTime['channelName']}",
-    "{$viewTime['establishment_date']}",
+    "{$viewTime['channelNumber']}",
     "{$viewTime['founder']}"
 )
 EOT;
@@ -39,26 +39,26 @@ function validate($viewTime)
     // まず、エラー情報を配列で保存する
     $errors = [];
 
-    // 会社名
+    // チャンネル名
     if (!strlen($viewTime['channelName'])) {
-        $errors['channelName'] = '会社名を入力してください';
+        $errors['channelName'] = 'チャンネル名を入力してください';
     } elseif (strlen($viewTime['channelName']) > 255) {
-        $errors['channelName'] = '会社名は255文字以内で入力してください';
+        $errors['channelName'] = 'チャンネル名は255文字以内で入力してください';
     }
 
     // 設立日
     // 2020-10-8 → 2020 10 8 「explode」で一度分離させる
-    $dates = explode('-', $viewTime['establishment_date']);
+    $dates = explode('-', $viewTime['channelNumber']);
     // 「日付じゃなかったらエラー」を出力するために、まず
     // どんな形式で出力されているか確認する
-    // var_dump($viewTime['establishment_date']);
-    if (!strlen($viewTime['establishment_date'])) {
-        $errors['establishment_date'] = '設立日を入力してください';
+    // var_dump($viewTime['channelNumber']);
+    if (!strlen($viewTime['channelNumber'])) {
+        $errors['channelNumber'] = '設立日を入力してください';
     // 月、日、年
     } elseif (count($dates) !== 3) {
-        $errors['establishment_date'] = '設立日を正しい形式で入力してください';
+        $errors['channelNumber'] = '設立日を正しい形式で入力してください';
     } elseif (!checkDate($dates[1], $dates[2], $dates[0])) {
-        $errors['establishment_date'] = '設立日を正しい日付で入力してください';
+        $errors['channelNumber'] = '設立日を正しい日付で入力してください';
     }
 
     // 代表者
@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // (var_export($_POST); で格納された値を確認するとよい)
     $viewTime = [
         'channelName' => $_POST['channelName'],
-        'establishment_date' => $_POST['establishment_date'],
+        'channelNumber' => $_POST['channelNumber'],
         'founder' => $_POST['founder']
     ];
     // (var_export($viewTime); で、処理後の状況を確認するのもよい)

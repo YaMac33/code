@@ -2,7 +2,7 @@
 
 $viewTime = [
     'channelName' => '',
-    'estublishment_date' => '',
+    'channelNumber' => '',
     'founder' => ''
 ];
 $errors = [];

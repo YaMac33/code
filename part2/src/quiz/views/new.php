@@ -13,8 +13,8 @@
         <input type="text" id="channelName" name="channelName" class="form-control mb-4" value="<?php echo $viewTime['channelName'] ?>">
     </div>
     <div class="form-group">
-        <label for="establishment_date">視聴日</label>
-        <input type="date" id="establishment_date" name="establishment_date" class="form-control mb-4" value="<?php echo $viewTime['establishment_date'] ?>">
+        <label for="channelNumber">視聴日</label>
+        <input type="date" id="channelNumber" name="channelNumber" class="form-control mb-4" value="<?php echo $viewTime['channelNumber'] ?>">
     </div>
     <div class="form-group">
         <label for="founder">視聴者</label>

@@ -20,7 +20,7 @@ function createTable($link)
 CREATE TABLE viewTimes (
 	id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	channelName VARCHAR(255),
-	establishment_date DATE,
+	channelNumber DATE,
 	founder VARCHAR(255),
 	created_at TIMESTAMP NOT NULL DEFAULT
 	CURRENT_TIMESTAMP
