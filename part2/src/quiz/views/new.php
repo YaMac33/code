@@ -9,8 +9,8 @@
     <?php endif; ?>
 
     <div class="form-group">
-        <label for="name">チャンネル名</label>
-        <input type="text" id="name" name="name" class="form-control mb-4" value="<?php echo $viewTime['name'] ?>">
+        <label for="channelName">チャンネル名</label>
+        <input type="text" id="channelName" name="channelName" class="form-control mb-4" value="<?php echo $viewTime['channelName'] ?>">
     </div>
     <div class="form-group">
         <label for="establishment_date">視聴日</label>

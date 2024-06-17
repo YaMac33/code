@@ -6,7 +6,7 @@
             <section class="card shadow-sm mb-4">
                 <div class="card-body">
                     <h2 class="card-title h4 mb-3">
-                        <?php echo escape($viewTime['name']); ?>
+                        <?php echo escape($viewTime['channelName']); ?>
                     </h2>
                     <div>
                         チャンネル：<?php echo escape($viewTime['establishment_date']); ?>&nbsp;|&nbsp;視聴時間：<?php echo escape($viewTime['founder']); ?>

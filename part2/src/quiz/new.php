@@ -1,7 +1,7 @@
 <?php
 
 $viewTime = [
-    'name' => '',
+    'channelName' => '',
     'estublishment_date' => '',
     'founder' => ''
 ];

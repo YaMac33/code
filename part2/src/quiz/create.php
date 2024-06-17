@@ -9,11 +9,11 @@ function createCompany($link, $viewTime)
 {
     $sql = <<<EOT
 INSERT INTO viewTimes (
-    name,
+    channelName,
     establishment_date,
     founder
 ) VALUES (
-    "{$viewTime['name']}",
+    "{$viewTime['channelName']}",
     "{$viewTime['establishment_date']}",
     "{$viewTime['founder']}"
 )
@@ -40,10 +40,10 @@ function validate($viewTime)
     $errors = [];
 
     // 会社名
-    if (!strlen($viewTime['name'])) {
-        $errors['name'] = '会社名を入力してください';
-    } elseif (strlen($viewTime['name']) > 255) {
-        $errors['name'] = '会社名は255文字以内で入力してください';
+    if (!strlen($viewTime['channelName'])) {
+        $errors['channelName'] = '会社名を入力してください';
+    } elseif (strlen($viewTime['channelName']) > 255) {
+        $errors['channelName'] = '会社名は255文字以内で入力してください';
     }
 
     // 設立日
@@ -76,10 +76,10 @@ function validate($viewTime)
 // (「REQUEST_METHOD」が、GETなのかPOSTなのかなどを取得できる)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // ２　POSTされた会社情報を変数(連想配列)に格納して、
-    // (ここの['○○']は「new.php」でいう「label for」「id」「name」のどれに当たる？)→どれでもなかった
+    // (ここの['○○']は「new.php」でいう「label for」「id」「channelName」のどれに当たる？)→どれでもなかった
     // (var_export($_POST); で格納された値を確認するとよい)
     $viewTime = [
-        'name' => $_POST['name'],
+        'channelName' => $_POST['channelName'],
         'establishment_date' => $_POST['establishment_date'],
         'founder' => $_POST['founder']
     ];
