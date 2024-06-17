@@ -4,7 +4,7 @@ require_once __DIR__ . '/lib/mysqli.php';
 
 function dropTable($link)
 {
-	$dropTableSql = 'DROP TABLE IF EXISTS companies;';
+	$dropTableSql = 'DROP TABLE IF EXISTS viewTimes;';
 	$result = mysqli_query($link, $dropTableSql);
 	if ($result) {
         echo 'テーブルを削除しました' . PHP_EOL;
@@ -17,7 +17,7 @@ function dropTable($link)
 function createTable($link)
 {
 	$createTableSql = <<<EOT
-CREATE TABLE companies (
+CREATE TABLE viewTimes (
 	id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	name VARCHAR(255),
 	establishment_date DATE,
