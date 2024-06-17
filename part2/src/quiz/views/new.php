@@ -10,15 +10,15 @@
 
     <div class="form-group">
         <label for="channelName">チャンネル名</label>
-        <input type="text" id="channelName" name="channelName" class="form-control mb-4" value="<?php echo $viewTime['channelName'] ?>">
+        <input type="text" id="channelName" name="channelName" class="form-control mb-4"  placeholder="例: チャンネル１" value="<?php echo $viewTime['channelName'] ?>">
     </div>
     <div class="form-group">
         <label for="channelNumber">チャンネル番号</label>
-        <input type="number" id="channelNumber" name="channelNumber" class="form-control mb-4" value="<?php echo $viewTime['channelNumber'] ?>">
+        <input type="number" id="channelNumber" name="channelNumber" class="form-control mb-4"  placeholder="例: 8"value="<?php echo $viewTime['channelNumber'] ?>">
     </div>
     <div class="form-group">
         <label for="viewingTime">視聴時間</label>
-        <input type="time" id="viewingTime" name="viewingTime" class="form-control mb-4" value="<?php echo $viewTime['viewingTime'] ?>">
+        <input type="number" id="viewingTime" name="viewingTime" class="form-control mb-4" placeholder="例: 70" value="<?php echo $viewTime['viewingTime'] ?>">
     </div>
     <div>
         <button type="submit" class="btn btn-primary">登録する</button>

@@ -40,7 +40,6 @@ function calculateTotalHour(array $channelViewingPeriods):float
     }
     $totalMin = array_sum($viewingTimes);
 
-    // $totalMin = array_sum(array_merge(...$channelViewingPeriods));
     return round($totalMin / 60, 1);
 }
 

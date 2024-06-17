@@ -50,8 +50,11 @@ function validate($viewTime)
         $errors['viewingTime'] = '視聴時間を入力してください';
     } elseif (strlen($viewTime['viewingTime']) > 100) {
             $errors['viewingTime'] = '代表者名は100文字以内で入力してください';
+            $hours = floor($viewTime['viewingTime'] / 60);
+            // $remainingMinutes = $viewTime['viewingTime'] % 60;
+            // $result = $hours . ":" . str_pad($remainingMinutes, 2, "0", STR_PAD_LEFT);
+            // echo "結果: " . htmlspecialchars($result);
     }
-
     return $errors;
 }
 
