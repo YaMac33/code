@@ -17,8 +17,8 @@
         <input type="date" id="channelNumber" name="channelNumber" class="form-control mb-4" value="<?php echo $viewTime['channelNumber'] ?>">
     </div>
     <div class="form-group">
-        <label for="founder">視聴者</label>
-        <input type="text" id="founder" name="founder" class="form-control mb-4" value="<?php echo $viewTime['founder'] ?>">
+        <label for="viewingTime">視聴者</label>
+        <input type="text" id="viewingTime" name="viewingTime" class="form-control mb-4" value="<?php echo $viewTime['viewingTime'] ?>">
     </div>
     <div>
         <button type="submit" class="btn btn-primary">登録する</button>

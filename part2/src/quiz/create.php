@@ -11,11 +11,11 @@ function createCompany($link, $viewTime)
 INSERT INTO viewTimes (
     channelName,
     channelNumber,
-    founder
+    viewingTime
 ) VALUES (
     "{$viewTime['channelName']}",
     "{$viewTime['channelNumber']}",
-    "{$viewTime['founder']}"
+    "{$viewTime['viewingTime']}"
 )
 EOT;
 
@@ -62,10 +62,10 @@ function validate($viewTime)
     }
 
     // 代表者
-    if (!strlen($viewTime['founder'])) {
-        $errors['founder'] = '代表者名を入力してください';
-    } elseif (strlen($viewTime['founder']) > 100) {
-            $errors['founder'] = '代表者名は100文字以内で入力してください';
+    if (!strlen($viewTime['viewingTime'])) {
+        $errors['viewingTime'] = '代表者名を入力してください';
+    } elseif (strlen($viewTime['viewingTime']) > 100) {
+            $errors['viewingTime'] = '代表者名は100文字以内で入力してください';
     }
 
     return $errors;
@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $viewTime = [
         'channelName' => $_POST['channelName'],
         'channelNumber' => $_POST['channelNumber'],
-        'founder' => $_POST['founder']
+        'viewingTime' => $_POST['viewingTime']
     ];
     // (var_export($viewTime); で、処理後の状況を確認するのもよい)
 
