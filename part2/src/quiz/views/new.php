@@ -18,7 +18,7 @@
     </div>
     <div class="form-group">
         <label for="viewingTime">視聴時間</label>
-        <input type="text" id="viewingTime" name="viewingTime" class="form-control mb-4" value="<?php echo $viewTime['viewingTime'] ?>">
+        <input type="time" id="viewingTime" name="viewingTime" class="form-control mb-4" value="<?php echo $viewTime['viewingTime'] ?>">
     </div>
     <div>
         <button type="submit" class="btn btn-primary">登録する</button>
