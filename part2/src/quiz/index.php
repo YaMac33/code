@@ -28,6 +28,6 @@ $link = dbConnect();
 // 会社情報を取得してきて、$companies変数に入れる
 $companies = listCompanies($link);
 
-$title = '会社情報の一覧';
+$title = 'テレビ視聴情報の一覧';
 $content = __DIR__ . '/views/index.php';
 include __DIR__ . '/views/layout.php';
